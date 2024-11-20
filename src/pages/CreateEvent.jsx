@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CreateEvents = () =>{
    const [eventName, setEventName] = useState()
    const [eventDesc, setEventDesc] = useState()
+   const navigate = useNavigate()
 
    const event = {
       name: "",
@@ -13,6 +14,7 @@ const CreateEvents = () =>{
    const handleClick = () =>{
       event.name = eventName
       event.description = eventDesc
+      navigate('/events')
    }
 
    return(
@@ -25,7 +27,7 @@ const CreateEvents = () =>{
             Event Description: <input type="text" placeholder="description" maxLength={300} onChange={e => setEventDesc(e.target.value)} />
          </label>
          <br />
-         <button onClick={handleClick()}>Create Event</button>
+         <button  onClick={handleClick}>Create Event</button>
       </div>
    )
 }
