@@ -1,17 +1,15 @@
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
-import Home from '../pages/Home';
 import Register from '../pages/Register';
-import Events from '../pages/Events.jsx/index.js'
-import Event from '../pages/Event.jsx/index.js'
-import CreateEvent from '../pages/CreateEvents'
+import Events from '../pages/Events'
+import Event from '../pages/Event'
+import CreateEvent from '../pages/CreateEvent'
 import Profile from '../pages/Profile'
 
 const Router = () => (
   <BrowserRouter>
     <Routes>
-      <Route index element={<Home/>} />
+      <Route index element={<Events/>} />
       <Route path="/register" element={<Register/>} />
-      <Route path="/events" element={<Events/>} />
       <Route path="/event:id" element={<Event/>} />
       <Route path="/create-event" element={<CreateEvent/>} />
       <Route path="/profile:id" element={<Profile/>}></Route>

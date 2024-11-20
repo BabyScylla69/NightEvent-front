@@ -1,8 +1,10 @@
-import { useState } from 'react'
-import './App.css'
+import Router from "./app/Router";
+import Login from "./pages/Login";
+import { useUserContext } from "./providers/UserProvider";
 
-function App() {
-  
+const App = () =>{
+const {user} = useUserContext();
+  return  user ? <Router/> : <Login/>
 }
 
 export default App
