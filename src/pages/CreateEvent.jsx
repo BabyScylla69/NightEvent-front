@@ -15,8 +15,6 @@ const CreateEvents = () =>{
       event.description = eventDesc
    }
 
-   
-
    return(
       <div>
          <label>
@@ -26,6 +24,8 @@ const CreateEvents = () =>{
          <label>
             Event Description: <input type="text" placeholder="description" maxLength={300} onChange={e => setEventDesc(e.target.value)} />
          </label>
+         <br />
+         <button onClick={handleClick()}>Create Event</button>
       </div>
    )
 }
