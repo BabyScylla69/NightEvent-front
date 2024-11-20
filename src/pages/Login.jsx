@@ -3,11 +3,11 @@ import { login } from "../services/api";
 import { useUserContext } from "../providers/UserProvider";
 
 const Login = () => {
-   const {setUser} = useUserContext();
-   const handleClick = async () => {
-      const response = await login(u)
-      setUser(response)
-   }
+  const {setUser} = useUserContext();
+  const handleClick = async () => {
+    const response = await login(u)
+    setUser(response)
+  }
   const [u, setU] = useState();
 
   return (

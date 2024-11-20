@@ -5,7 +5,7 @@ const Events = () =>{
 return(
     <div>
       <li><Link to="/profile">Profile</Link></li>
-      <li></li>
+      <li><Link to="/CreateEvent">Create new event</Link></li>
     </div>
 )
 }
