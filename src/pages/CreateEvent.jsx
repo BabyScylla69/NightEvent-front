@@ -1,31 +1,24 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { createEvent } from "../services/api"
 
 const CreateEvents = () =>{
-   const [eventName, setEventName] = useState()
-   const [eventDesc, setEventDesc] = useState()
    const navigate = useNavigate()
-
-   const event = {
-      name: "",
-      description: ""
-   }
+   const [event, setEvent] = useState({name: '', description: ''});
 
    const handleClick = () =>{
-      event.name = eventName
-      event.description = eventDesc
-      console.log(event, '111111111111111111')
+      createEvent(event)
       navigate('/')
    }
 
    return(
       <div>
          <label>
-            Event Name: <input type="text" placeholder="name" maxLength={15} onChange={e => setEventName(e.target.value)} />
+            Event Name: <input type="text" placeholder="name" maxLength={15} onChange={(e) => setEvent({...event, name: e.target.value})} />
          </label>
          <hr />
          <label>
-            Event Description: <input type="text" placeholder="description" maxLength={300} onChange={e => setEventDesc(e.target.value)} />
+            Event Description: <input type="text" placeholder="description" maxLength={300} onChange={(e) => setEvent({...event, description: e.target.value})} />
          </label>
          <br />
          <button  onClick={handleClick}>Create Event</button>

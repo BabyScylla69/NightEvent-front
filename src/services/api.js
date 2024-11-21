@@ -38,3 +38,17 @@ export const createUser = async (user) => {
 const setAuth = async (token) => {
   i.defaults.headers.common.Authorization = `basic ${token}`;
 };
+
+export const getEvents = async () => {
+  const response = await i.get('/events')
+  return response.data
+}
+
+export const getEventByID = async (id) => {
+  const response = await i.get('/events/' + id)
+  return response.data
+}
+
+export const createEvent = async (obj) => {
+  await i.post('/events', obj)
+}
