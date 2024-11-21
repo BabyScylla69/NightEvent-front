@@ -5,11 +5,14 @@ import Form from "../components/Form/Form";
 
 const Login = () => {
    const {setUser} = useUserContext();
-   const handleClick = async () => {
+   
+  const [u, setU] = useState();
+  const [modal, setModal] = useState();
+
+  const handleClick = async () => {
       const response = await login(u)
       setUser(response)
    }
-  const [u, setU] = useState();
 
   return (
     <div>

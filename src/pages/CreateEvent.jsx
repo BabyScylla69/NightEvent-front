@@ -14,7 +14,8 @@ const CreateEvents = () =>{
    const handleClick = () =>{
       event.name = eventName
       event.description = eventDesc
-      navigate('/events')
+      console.log(event, '111111111111111111')
+      navigate('/')
    }
 
    return(

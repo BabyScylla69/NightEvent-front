@@ -4,8 +4,8 @@ const Events = () =>{
 // list events
 return(
     <div>
-      <li><Link to="/profile">Profile</Link></li>
-      <li><Link to="/CreateEvent">Create new event</Link></li>
+      {/* <li><Link to="/profile">Profile</Link></li> */}
+      <li><Link to="/Create-Event">Create new event</Link></li>
     </div>
 )
 }
