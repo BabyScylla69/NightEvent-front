@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { login } from "../services/api";
 import { useUserContext } from "../providers/UserProvider";
-import RegisterForm from "../components/RegisterForm/RegisterForm";
+import Form from "../components/Form/Form";
 
 const Login = () => {
    const {setUser} = useUserContext();
@@ -22,7 +22,12 @@ const Login = () => {
       <button onClick={handleClick}>Log in</button> 
       <br />
       <button onClick={() => setModal(true)}>Register</button>
-      <RegisterForm openModal={modal} closeModal={() => setModal(false)} />
+      <Form openModal={modal} closeModal={() => setModal(false)}> 
+        <h1>Register Form</h1>
+        <input type="text" placeholder="username"/>
+        <input type="password" placeholder="password"/>
+        <button>Register</button>
+      </Form>
     </div>
   );
 };

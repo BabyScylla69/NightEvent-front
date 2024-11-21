@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const RegisterForm = ({ openModal, closeModal }) => {
+const Form = ({ openModal, closeModal, children }) => {
   const ref = useRef();
 
   useEffect(() => {
@@ -14,13 +14,9 @@ const RegisterForm = ({ openModal, closeModal }) => {
   return (
     <dialog ref={ref} onCancel={closeModal}>
       <button onClick={closeModal}>X</button>
-      <div>
-        <input type="text" />
-        <input type="password" />
-        <button>Submit</button>
-      </div>
+      {children}
     </dialog>
   );
 }
 
-export default RegisterForm;
+export default Form;
